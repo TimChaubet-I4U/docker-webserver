@@ -19,14 +19,27 @@ Base webserver with 2 external volumes : /config & /www \
 
 [Github](https://github.com/TimChaubet-I4U/docker-webserver) [Dockerhub](https://hub.docker.com/repository/docker/insight4upublic/webserver)
 
+| Variable                 | Default           | Description                                            |
+|--------------------------|-------------------|--------------------------------------------------------|
+| `APACHE_DOCUMENT_ROOT`   | `/www`            | Apache’s DocumentRoot                                  |
+| `WEB_USER`               | `www-data`        | Linux user Apache runs as                              |
+| `WEB_GROUP`              | `www-data`        | Linux group Apache runs as                             |
+| `WEB_UID`                | `33`              | UID to use (creates user if missing)                   |
+| `WEB_GID`                | `33`              | GID to use (creates group if missing)                  |
+| `TZ`                     | `Europe/Brussels` | Timezone for PHP (`date.timezone`)                     |
+
+
 minimal:
+```
 docker create \
       -p 4567:80 \
       -v /some/host/folder/www:/www \
       -v /some/host/folder/config:/config \
       trueosiris/webserver
+```
 
 more options:
+```
 docker create \
       -p 4567:80 \
       -v /some/host/folder/www:/www \
@@ -41,11 +54,11 @@ docker create \
       --restart=unless-stopped \
       -v "/var/run/docker.sock:/var/run/docker.sock" \
       trueosiris/webserver
-
+```
 
 docker compose
 
-yaml
+``` yaml
 x-volume-localtime:
   &etclocaltime
   type: 'bind'
@@ -55,21 +68,21 @@ x-volume-localtime:
 x-volume-webdefault-webroot:
   &webdefaultwebroot
   type: 'bind'
-  source: /mnt/user/docker_compose/web/default/www
+  source: ./web/default/www
   target: /www
   bind:
     create_host_path: true  
 x-volume-webdefault-config:
   &webdefaultconfig
   type: 'bind'
-  source: /mnt/user/docker_compose/web/default/config
+  source: ./web/default/config
   target: /config
   bind:
     create_host_path: true
 
 services:
   webserver:
-    image: trueosiris/webserver
+    image: insight4upublic/webserver
     environment:
       - APACHE_DOCUMENT_ROOT=/www 
       - PGID=1000 
@@ -77,6 +90,7 @@ services:
       - TZ=Europe/Brussels 
       - HOST_HOSTNAME=$(hostname) 
       - HOST_IP=$(ip addr show enp0s3 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1) 
+
     restart: unless-stopped
     network_mode: bridge     
     volumes: 
@@ -90,3 +104,4 @@ services:
       interval: 60s
       timeout: 10s
       retries: 5
+```
