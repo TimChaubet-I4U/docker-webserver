@@ -4,14 +4,14 @@ Default apache webserver with configurable user+group
 
 
 ![Insight4U](https://img.shields.io/badge/Insight-4U-f08060)
-![Github commits](https://i4ubadges.chau.bet/github/commits/insight4upublic/webserver/main?cache=600)
-![Github last-commit](https://i4ubadges.chau.bet/github/last-commit/insight4upublic/webserver/main?cache=600)
-![Github stars](https://i4ubadges.chau.bet/github/stars/insight4upublic/webserver?cache=600)
-[![Github issues](https://i4ubadges.chau.bet/github/issues/insight4upublic/webserver?cache=600)](https://github.com/insight4upublic/webserver/issues?q=is%3Aissue%20)
-[![Github open issues](https://i4ubadges.chau.bet/github/open-issues/Dedalus-Insight4U/I4U-LinkD?cache=600)](https://github.com/Dedalus-Insight4U/I4U-LinkD/issues)
-[![Docker Pulls](https://badgen.net/docker/pulls/insight4upublic/webserver?icon=docker&label=pulls)](https://hub.docker.com/r/insight4upublic/webserver/)
-[![Docker Stars](https://badgen.net/docker/stars/insight4upublic/webserver?icon=docker&label=stars)](https://hub.docker.com/r/insight4upublic/webserver/)
-[![Docker Image Size](https://badgen.net/docker/size/insight4upublic/webserver?icon=docker&label=image%20size)](https://hub.docker.com/r/insight4upublic/webserver/)
+![Github commits](https://i4ubadges.chau.bet/github/commits/TimChaubet-I4U/docker-webserver/main?cache=600)
+![Github last-commit](https://i4ubadges.chau.bet/github/last-commit/TimChaubet-I4U/docker-webserver/main?cache=600)
+![Github stars](https://i4ubadges.chau.bet/github/stars/TimChaubet-I4U/docker-webserver?cache=600)
+[![Github issues](https://i4ubadges.chau.bet/github/issues/TimChaubet-I4U/docker-webserver?cache=600)](https://github.com/TimChaubet-I4U/docker-webserver/issues?q=is%3Aissue%20)
+[![Github open issues](https://i4ubadges.chau.bet/github/open-issues/TimChaubet-I4U/docker-webserver?cache=600)](https://github.com/TimChaubet-I4U/docker-webserver/issues)
+[![Docker Pulls](https://i4ubadges.chau.bet/docker/pulls/insight4upublic/webserver?icon=docker&label=pulls)](https://hub.docker.com/r/insight4upublic/webserver/)
+[![Docker Stars](https://i4ubadges.chau.bet/docker/stars/insight4upublic/webserver?icon=docker&label=stars)](https://hub.docker.com/r/insight4upublic/webserver/)
+[![Docker Image Size](https://i4ubadges.chau.bet/docker/size/insight4upublic/webserver?icon=docker&label=image%20size)](https://hub.docker.com/r/insight4upublic/webserver/)
 
 Base webserver with 2 external volumes : /config & /www \
 /config holds all apache2 & php8.2 config files \
